@@ -1,0 +1,14 @@
+.headerstyle {
+    background-color: rgba(188, 228, 241, 0.548) !important;
+    font-size: smaller !important;
+    font-weight : bold !important;
+}
+
+.lastrow {
+    font-weight : bold !important;
+    background-color: rgba(211, 211, 211, 0.247) !important;
+}
+
+td {
+    border: none !important;
+}

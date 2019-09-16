@@ -1,41 +1,136 @@
-import {Component, OnInit} from '@angular/core';
-import { Car } from './domain/car';
-import { CarService} from './services/carservice';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector:    'app-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  providers:   [CarService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  frozenWidth: string;
+  cars: any[];
+  scrollableCols: any[];
+  frozenCols: any[];
+  totalcal: any[];
+  faml_15_sum: number;
+  euro_15_sum: number;
+  faml_16_sum: number;
+  euro_16_sum: number;
+  faml_tot_sum: number;
+  euro_tot_sum: number;
+  ngOnInit() {
+    this.cars = [
+      {
+        companyName: 'ABCD',
+        distributor_ac: 123121,
+        ba: 'CT',
+        brand: 'Atlas-1',
+        faml_15: 20,
+        euro_15: 21,
+        faml_16: 22,
+        euro_16: 23,
+        faml_tot: 100,
+        euro_tot: 200
+      },
+      {
+        companyName: 'XYZ',
+        distributor_ac: 564565,
+        ba: 'AT',
+        brand: 'Atlas-2',
+        faml_15: 11,
+        euro_15: 12,
+        faml_16: 13,
+        euro_16: 14,
+        faml_tot: 100,
+        euro_tot: 200
+      },
+      {
+        companyName: 'PQR',
+        distributor_ac: 564565,
+        ba: 'AT',
+        brand: 'Atlas-2',
+        faml_15: 11,
+        euro_15: 12,
+        faml_16: 13,
+        euro_16: 14,
+        faml_tot: 100,
+        euro_tot: 200
+      },
+      {
+        companyName: 'PQR',
+        distributor_ac: 564565,
+        ba: 'AT',
+        brand: 'Atlas-2',
+        faml_15: 11,
+        euro_15: 12,
+        faml_16: 13,
+        euro_16: 14,
+        faml_tot: 100,
+        euro_tot: 200
+      },
+      {
+        companyName: 'PQR',
+        distributor_ac: 564565,
+        ba: 'AT',
+        brand: 'Atlas-2',
+        faml_15: 11,
+        euro_15: 12,
+        faml_16: 13,
+        euro_16: 14,
+        faml_tot: 100,
+        euro_tot: 200
+      },
+      {
+        companyName: 'PQR',
+        distributor_ac: 564565,
+        ba: 'AT',
+        brand: 'Atlas-2',
+        faml_15: 11,
+        euro_15: 12,
+        faml_16: 13,
+        euro_16: 14,
+        faml_tot: 100,
+        euro_tot: 200
+      }
+    ];
 
-    cars: Car[];
+    this.frozenCols = [
+      { field: 'companyName', header: 'Company Name' },
+      { field: 'distributor_ac', header: 'A/C No' },
+      { field: 'ba', header: 'BA' },
+      { field: 'brand', header: 'Brand' },
+      { field: 'brand', header: 'Brand' },
+      { field: 'brand', header: 'Brand' }
+    ];
+    this.frozenWidth = `${this.frozenCols.length * 150}px`;
 
-    frozenCols: any[];
+    this.scrollableCols = [
+      { field: 'faml_15', header: 'FAM Local' },
+      { field: 'euro_15', header: 'Euro/Other' },
+      { field: 'faml_16', header: 'FAM Local' },
+      { field: 'euro_16', header: 'Euro/Other' },
+      { field: 'faml_tot', header: 'FAM Local' },
+      { field: 'euro_tot', header: 'Euro/Other' }
+    ];
 
-    scrollableCols: any[];
+    this.faml_15_sum = this.cars.map(i => i.faml_15).reduce((a, b) => a + b, 0);
+    this.euro_15_sum = this.cars.map(i => i.euro_15).reduce((a, b) => a + b, 0);
+    this.faml_16_sum = this.cars.map(i => i.faml_16).reduce((a, b) => a + b, 0);
+    this.euro_16_sum = this.cars.map(i => i.euro_16).reduce((a, b) => a + b, 0);
+    this.faml_tot_sum = this.cars.map(i => i.faml_tot).reduce((a, b) => a + b, 0);
+    this.euro_tot_sum = this.cars.map(i => i.euro_tot).reduce((a, b) => a + b, 0);
 
-    frozenColLength: '200px';
+    this.totalcal = [
+      {
+        total: 'Total',
+        faml_15: this.faml_15_sum,
+        euro_15: this.euro_15_sum,
+        faml_16: this.faml_16_sum,
+        euro_16: this.euro_16_sum,
+        faml_tot: this.faml_tot_sum,
+        euro_tot: this.euro_tot_sum
+      }
+    ];
 
-    constructor(private carService: CarService) { }
-
-    ngOnInit() {
-        this.carService.getCars().subscribe(cars => this.cars = cars);
-
-        this.scrollableCols = [
-            { field: 'brand', header: 'FAM Local' },
-            { field: 'color', header: 'Euro/Other' },
-            { field: 'country', header: 'FAM Local' },
-            { field: 'state', header: 'Euro/Other' },
-            { field: 'country', header: 'FAM Local' },
-            { field: 'state', header: 'Euro/Other' }
-        ];
-
-        this.frozenCols = [
-            { field: 'CompanyName', header: 'Company Name' },
-            { field: 'BA', header: 'BA' },
-            { field: 'FAM', header: 'FAM' },
-        ];
-    }
+    //this.cars.push({companyName: 'Total', distributor_ac : '', ba : '', brand: '', faml_15: 11, euro_15: 12, faml_16 : 13, euro_16 : 14, faml_tot: 100, euro_tot: 200});
+  }
 }
-
