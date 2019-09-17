@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
   euro_16_sum: number;
   faml_tot_sum: number;
   euro_tot_sum: number;
+
+data: any[];
+newdata: any[];
+
   ngOnInit() {
     this.cars = [
       {
@@ -131,6 +135,50 @@ export class AppComponent implements OnInit {
       }
     ];
 
-    //this.cars.push({companyName: 'Total', distributor_ac : '', ba : '', brand: '', faml_15: 11, euro_15: 12, faml_16 : 13, euro_16 : 14, faml_tot: 100, euro_tot: 200});
+
+    this.data = [{
+        companyName: 'ABCD',
+        distributor_ac: 123,
+        year: 2015,
+        fam: 100,
+        euro: 120
+    },
+    {
+        companyName: 'ABCD',
+        distributor_ac: 123,
+        year: 2016,
+        fam: 110,
+        euro: 130
+    }, {
+        companyName: 'XYZ',
+        distributor_ac: 444,
+        year: 2015,
+        fam: 300,
+        euro: 350
+    },
+    {
+        companyName: 'XYZ',
+        distributor_ac: 444,
+        year: 2016,
+        fam: 200,
+        euro: 250
+    }
+];
+
+this.data.forEach(element => {
+    console.log(element);
+});
+
+for (let index = 0; index < this.data.length; index++) {
+    const element = this.data[index].companyName.length;
+    console.log(element);
+}
+
+
+// var i;
+// console.log();
+// for (i = 0; i < this.data.length; i++) {
+//   console.log(this.data[i].companyName);
+// }
   }
 }
