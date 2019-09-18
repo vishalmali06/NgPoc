@@ -27,6 +27,13 @@ export class AppComponent implements OnInit {
             year: 2015,
             fam: 100,
             euro: 120
+        }, 
+        {
+            companyName: 'XYZ',
+            distributor_ac: 444,
+            year: 2015,
+            fam: 300,
+            euro: 350
         },
         {
             companyName: 'ABCD',
@@ -34,12 +41,6 @@ export class AppComponent implements OnInit {
             year: 2016,
             fam: 110,
             euro: 130
-        }, {
-            companyName: 'XYZ',
-            distributor_ac: 444,
-            year: 2015,
-            fam: 300,
-            euro: 350
         },
         {
             companyName: 'XYZ',
@@ -50,7 +51,7 @@ export class AppComponent implements OnInit {
         }
         ];
 
-        for (var i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length; i++) {
             if (this.temparr.indexOf(this.data[i].companyName) === -1) {
                 this.temparr.push(this.data[i].companyName);
                 this.newData.push({
@@ -69,15 +70,15 @@ export class AppComponent implements OnInit {
             }
         }
 
-        for (var i = 0; i < this.newData.length; i++) {
+        for (let i = 0; i < this.newData.length; i++) {
             Object.assign(this.newData[i], { total_fam: 210, total_euro: 250 });
         }
 
         console.log(this.newData);
 
-        for (var i = 0; i < this.newData.length; i++) {
+        for (let i = 0; i < this.newData.length; i++) {
             if (i === 0) {
-                for (var j = 0; j < Object.keys(this.newData[i]).length; j++) {
+                for (let j = 0; j < Object.keys(this.newData[i]).length; j++) {
                     if (j < 2) {
                         this.frozenCols.push(
                             { field: Object.keys(this.newData[i])[j], header: Object.keys(this.newData[i])[j] }
@@ -95,12 +96,15 @@ export class AppComponent implements OnInit {
         this.frozenWidth = `${this.frozenCols.length * 150}px`;
 
         this.totalcal = [this.newData.reduce((acc, n) => {
-            for (var prop in n) {
-                if (acc.hasOwnProperty(prop)) acc[prop] += n[prop];
-                else acc[prop] = n[prop];
+            for (const prop in n) {
+                if (acc.hasOwnProperty(prop)) {
+                    acc[prop] += n[prop];
+                } else {
+                    acc[prop] = n[prop];
+                }
             }
             return acc;
-        }, {})]
+        }, {})];
 
     }
 }
