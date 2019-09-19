@@ -1,5 +1,6 @@
 <h3>Frozen Columns</h3>
-<p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="newData" [scrollable]="true" scrollHeight="150px" [frozenWidth]="frozenWidth">
+<p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="newData" [scrollable]="true"
+    scrollHeight="200px" [frozenWidth]="frozenWidth">
     <ng-template pTemplate="colgroup" let-columns>
         <colgroup>
             <col *ngFor="let col of columns" style="width:120px">
@@ -8,7 +9,8 @@
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns" [ngClass]="'headerstyle'" [pSortableColumn]="col.field">
-                {{col.header}}<p-sortIcon *ngIf="col.field == 'companyName' || col.field == 'distributor_ac'" [field]="col.field"></p-sortIcon>
+                {{col.header}}<p-sortIcon *ngIf="col.field == 'company_name' || col.field == 'distributor_ac_no'"
+                    [field]="col.field"></p-sortIcon>
             </th>
         </tr>
     </ng-template>
@@ -21,14 +23,14 @@
     </ng-template>
     <ng-template pTemplate="footer" let-columns>
         <tr>
-            <td *ngFor="let col of columns; let i = index">
-                <div *ngIf="col.field == 'companyName'">Total</div>
-                <div *ngIf="col.field == 'fam_2015'">{{totalcal[0].fam_2015}}</div>
-                <div *ngIf="col.field == 'euro_2015'">{{totalcal[0].euro_2015}}</div>
-                <div *ngIf="col.field == 'fam_2016'">{{totalcal[0].fam_2016}}</div>
-                <div *ngIf="col.field == 'euro_2016'">{{totalcal[0].euro_2016}}</div>
-                <div *ngIf="col.field == 'total_fam'">{{totalcal[0].total_fam}}</div>
-                <div *ngIf="col.field == 'total_euro'">{{totalcal[0].total_euro}}</div>
+            <td *ngFor="let col of columns; let i = index" style="background-color:rgba(211, 211, 211, 0.247)">
+                <div *ngIf="col.field == 'company_name'">Total</div>
+                <div *ngIf="col.field == 'fam_local_2015'">{{totalcal[0].fam_local_2015}}</div>
+                <div *ngIf="col.field == 'euro_other_2015'">{{totalcal[0].euro_other_2015}}</div>
+                <div *ngIf="col.field == 'fam_local_2016'">{{totalcal[0].fam_local_2016}}</div>
+                <div *ngIf="col.field == 'euro_other_2016'">{{totalcal[0].euro_other_2016}}</div>
+                <div *ngIf="col.field == 'fam_total'">{{totalcal[0].fam_total}}</div>
+                <div *ngIf="col.field == 'euro_total'">{{totalcal[0].euro_total}}</div>
             </td>
         </tr>
     </ng-template>
