@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
         for (let j = 0; j < this.newData.length; j++) {
             this.totarr = [];
             for (let i in this.newData[j]) {
-                if (i.search("total_") !== -1) {
+                if (i.search('total_') !== -1) {
                     this.totarr.push(this.newData[j][i]);
                     delete this.newData[j][i];
                 }
@@ -85,8 +85,7 @@ export class AppComponent implements OnInit {
                         this.frozenCols.push(
                             { field: Object.keys(this.newData[i])[j], header: humanize(Object.keys(this.newData[i])[j]) }
                         );
-                    }
-                    else {
+                    } else {
                         this.scrollableCols.push(
                             { field: Object.keys(this.newData[i])[j], header: humanize(Object.keys(this.newData[i])[j]) }
                         );
@@ -109,7 +108,7 @@ export class AppComponent implements OnInit {
         }, {})];
 
         function humanize(str) {
-            var frags = str.split('_');
+            const frags = str.split('_');
             for (let i = 0; i < frags.length; i++) {
                 frags[i] = frags[i].charAt(0).toUpperCase() + frags[i].slice(1);
             }

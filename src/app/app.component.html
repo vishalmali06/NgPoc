@@ -16,7 +16,8 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <td *ngFor="let col of columns" [ngClass]="col.field=='total_fam' ? 'lastrow' : col.field=='total_euro' ? 'lastrow' : null">
+            <td *ngFor="let col of columns; let i = index"
+                [ngClass]="col.field=='fam_total' ? 'lastrow' : col.field=='euro_total' ? 'lastrow' : null">
                 {{rowData[col.field]}}
             </td>
         </tr>
