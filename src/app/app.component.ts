@@ -136,6 +136,7 @@ export class AppComponent implements OnInit {
             return frags.join(' ');
         }
         //console.log(this.scrollableCols);
+        console.log(this.newData);
         this.arrdd = this.scrollableCols.slice();
     }
 
@@ -144,10 +145,28 @@ export class AppComponent implements OnInit {
         console.log(this.arrdd);
         if (deviceValue === '2015') {
             this.arrdd.splice(2, 2);
+            for (let i = 0; i < this.newData.length; i++) {
+                this.newData[i].fam_total = this.newData[i].fam_local_2015;
+                this.newData[i].euro_total = this.newData[i].euro_other_2015;
+            }
+            this.totalcal[0].fam_total = this.totalcal[0].fam_local_2015;
+            this.totalcal[0].euro_total = this.totalcal[0].euro_other_2015;
         } else if (deviceValue === '2016') {
             this.arrdd.splice(0, 2);
+            for (let i = 0; i < this.newData.length; i++) {
+                this.newData[i].fam_total = this.newData[i].fam_local_2016;
+                this.newData[i].euro_total = this.newData[i].euro_other_2016;
+            }
+            this.totalcal[0].fam_total = this.totalcal[0].fam_local_2016;
+            this.totalcal[0].euro_total = this.totalcal[0].euro_other_2016;
         } else {
             this.arrdd = this.scrollableCols.slice();
+            for (let i = 0; i < this.newData.length; i++) {
+                this.newData[i].fam_total = (this.newData[i].fam_local_2015 + this.newData[i].fam_local_2016);
+                this.newData[i].euro_total = (this.newData[i].euro_other_2015 + this.newData[i].euro_other_2016);
+            }
+            this.totalcal[0].fam_total = (this.totalcal[0].fam_local_2015 + this.totalcal[0].fam_local_2016);
+            this.totalcal[0].euro_total = (this.totalcal[0].fam_local_2016 + this.totalcal[0].euro_other_2016);
         }
         console.log(this.arrdd);
     }
