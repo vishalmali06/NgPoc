@@ -27,22 +27,22 @@ export class AppComponent implements OnInit {
         this.totarr = [];
         this.arrdd = [];
         this.data = [
-            { company_name: 'AIR', distributor_ac_no: 12345, b_a: 'CT', f_a_m: 'INK', year: 2015, fam_local: 10, euro_other: 20 },
-            { company_name: 'Optimize', distributor_ac_no: 12345677, b_a: 'PT', f_a_m: 'INO', year: 2015, fam_local: 30, euro_other: 40 },
-            { company_name: 'Winsupply', distributor_ac_no: 12344556, b_a: 'VT', f_a_m: 'JPN', year: 2015, fam_local: 50, euro_other: 60 },
-            { company_name: 'Av group DB inc', distributor_ac_no: 122334455, b_a: 'IT', f_a_m: 'ZAA', year: 2015, fam_local: 70, euro_other: 80 },
-            { company_name: 'AIR', distributor_ac_no: 12345, b_a: 'CT', f_a_m: 'INK', year: 2016, fam_local: 90, euro_other: 100 },
-            { company_name: 'Optimize', distributor_ac_no: 12345677, b_a: 'PT', f_a_m: 'INO', year: 2016, fam_local: 110, euro_other: 120 },
-            { company_name: 'Winsupply', distributor_ac_no: 12344556, b_a: 'VT', f_a_m: 'JPN', year: 2016, fam_local: 130, euro_other: 140 },
-            { company_name: 'Av group DB inc', distributor_ac_no: 122334455, b_a: 'IT', f_a_m: 'ZAA', year: 2016, fam_local: 150, euro_other: 160 },
-            { company_name: 'Acier roger NX inc', distributor_ac_no: 444444, b_a: 'CT', f_a_m: 'INK', year: 2015, fam_local: 15, euro_other: 25 },
-            { company_name: 'AV Bombardier inc', distributor_ac_no: 555555, b_a: 'PT', f_a_m: 'INO', year: 2015, fam_local: 35, euro_other: 45 },
-            { company_name: 'Produits rog', distributor_ac_no: 666666, b_a: 'VT', f_a_m: 'JPN', year: 2015, fam_local: 55, euro_other: 65 },
-            { company_name: 'Bombardier inc', distributor_ac_no: 777777, b_a: 'IT', f_a_m: 'ZAA', year: 2015, fam_local: 75, euro_other: 85 },
-            { company_name: 'Acier roger NX inc', distributor_ac_no: 444444, b_a: 'CT', f_a_m: 'INK', year: 2016, fam_local: 95, euro_other: 150 },
-            { company_name: 'AV Bombardier inc', distributor_ac_no: 555555, b_a: 'PT', f_a_m: 'INO', year: 2016, fam_local: 115, euro_other: 125 },
-            { company_name: 'Produits rog', distributor_ac_no: 666666, b_a: 'VT', f_a_m: 'JPN', year: 2016, fam_local: 135, euro_other: 145 },
-            { company_name: 'Bombardier inc', distributor_ac_no: 777777, b_a: 'IT', f_a_m: 'ZAA', year: 2016, fam_local: 155, euro_other: 165 }
+            { company_name: 'AIR', distributor_ac_no: 31100798601, b_a: 'CT', f_a_m: 'INK', year: 2015, fam_local: 10, other: 20 },
+            { company_name: 'Optimize', distributor_ac_no: 31100798602, b_a: 'PT', f_a_m: 'INO', year: 2015, fam_local: 30, other: 40 },
+            { company_name: 'Winsupply', distributor_ac_no: 31100798603, b_a: 'VT', f_a_m: 'JPN', year: 2015, fam_local: 50, other: 60 },
+            { company_name: 'Av group DB inc', distributor_ac_no: 31100798604, b_a: 'IT', f_a_m: 'ZAA', year: 2015, fam_local: 70, other: 80 },
+            { company_name: 'AIR', distributor_ac_no: 31100798601, b_a: 'CT', f_a_m: 'INK', year: 2016, fam_local: 90, other: 100 },
+            { company_name: 'Optimize', distributor_ac_no: 31100798602, b_a: 'PT', f_a_m: 'INO', year: 2016, fam_local: 110, other: 120 },
+            { company_name: 'Winsupply', distributor_ac_no: 31100798603, b_a: 'VT', f_a_m: 'JPN', year: 2016, fam_local: 130, other: 140 },
+            { company_name: 'Av group DB inc', distributor_ac_no: 31100798604, b_a: 'IT', f_a_m: 'ZAA', year: 2016, fam_local: 150, other: 160 },
+            { company_name: 'Acier roger NX inc', distributor_ac_no: 31100798605, b_a: 'CT', f_a_m: 'INK', year: 2015, fam_local: 15, other: 25 },
+            { company_name: 'AV Bombardier inc', distributor_ac_no: 31100798666, b_a: 'PT', f_a_m: 'INO', year: 2015, fam_local: 35, other: 45 },
+            { company_name: 'Produits rog', distributor_ac_no: 31100798607, b_a: 'VT', f_a_m: 'JPN', year: 2015, fam_local: 55, other: 65 },
+            { company_name: 'Bombardier inc', distributor_ac_no: 31100798608, b_a: 'IT', f_a_m: 'ZAA', year: 2015, fam_local: 75, other: 85 },
+            { company_name: 'Acier roger NX inc', distributor_ac_no: 31100798605, b_a: 'CT', f_a_m: 'INK', year: 2016, fam_local: 95, other: 150 },
+            { company_name: 'AV Bombardier inc', distributor_ac_no: 31100798666, b_a: 'PT', f_a_m: 'INO', year: 2016, fam_local: 115, other: 125 },
+            { company_name: 'Produits rog', distributor_ac_no: 31100798607, b_a: 'VT', f_a_m: 'JPN', year: 2016, fam_local: 135, other: 145 },
+            { company_name: 'Bombardier inc', distributor_ac_no: 31100798608, b_a: 'IT', f_a_m: 'ZAA', year: 2016, fam_local: 155, other: 165 }
         ];
 
         for (let i = 0; i < this.data.length; i++) {
@@ -55,14 +55,14 @@ export class AppComponent implements OnInit {
                     f_a_m: this.data[i].f_a_m
                 });
                 this.newData[this.temparr.indexOf(this.data[i].company_name)][`fam_local_${this.data[i].year}`] = this.data[i].fam_local;
-                this.newData[this.temparr.indexOf(this.data[i].company_name)][`euro_other_${this.data[i].year}`] = this.data[i].euro_other;
+                this.newData[this.temparr.indexOf(this.data[i].company_name)][`other_${this.data[i].year}`] = this.data[i].other;
                 this.newData[this.temparr.indexOf(this.data[i].company_name)].total_fam = this.data[i].fam_local;
-                this.newData[this.temparr.indexOf(this.data[i].company_name)].total_euro = this.data[i].euro_other;
+                this.newData[this.temparr.indexOf(this.data[i].company_name)].total_other = this.data[i].other;
             } else {
                 this.newData[this.temparr.indexOf(this.data[i].company_name)][`fam_local_${this.data[i].year}`] = this.data[i].fam_local;
-                this.newData[this.temparr.indexOf(this.data[i].company_name)][`euro_other_${this.data[i].year}`] = this.data[i].euro_other;
+                this.newData[this.temparr.indexOf(this.data[i].company_name)][`other_${this.data[i].year}`] = this.data[i].other;
                 this.newData[this.temparr.indexOf(this.data[i].company_name)].total_fam += this.data[i].fam_local;
-                this.newData[this.temparr.indexOf(this.data[i].company_name)].total_euro += this.data[i].euro_other;
+                this.newData[this.temparr.indexOf(this.data[i].company_name)].total_other += this.data[i].other;
             }
         }
         for (let j = 0; j < this.newData.length; j++) {
@@ -76,11 +76,9 @@ export class AppComponent implements OnInit {
 
             this.newData[j] = Object.assign({}, this.newData[j],
                 { fam_total: this.totarr[0] },
-                { euro_total: this.totarr[1] }
+                { other_total: this.totarr[1] }
             );
         }
-
-        //console.log(this.newData);
 
         for (let i = 0; i < this.newData.length; i++) {
             if (i === 0) {
@@ -111,23 +109,6 @@ export class AppComponent implements OnInit {
             return acc;
         }, {})];
 
-        // this.totalcal.forEach((obj, i) => {
-        //     const key = Object.keys(obj)[ i];
-        //     obj[key] = i;
-        // });
-
-        // for (let i = 0; i < this.totalcal.length; i++) {
-        //     for (let j = 0; j < Object.keys(this.totalcal[i]).length; j++) {
-        //         if (j > 3) {
-        //             this.newData[i] = 'here';     
-        //         } else {
-
-        //         }
-        //     }
-        // }
-
-        //console.log(this.totalcal);
-
         function humanize(str) {
             const frags = str.split('_');
             for (let i = 0; i < frags.length; i++) {
@@ -135,40 +116,36 @@ export class AppComponent implements OnInit {
             }
             return frags.join(' ');
         }
-        //console.log(this.scrollableCols);
-        console.log(this.newData);
         this.arrdd = this.scrollableCols.slice();
     }
 
     onChange(deviceValue) {
         this.arrdd = this.scrollableCols.slice();
-        console.log(this.arrdd);
         if (deviceValue === '2015') {
             this.arrdd.splice(2, 2);
             for (let i = 0; i < this.newData.length; i++) {
                 this.newData[i].fam_total = this.newData[i].fam_local_2015;
-                this.newData[i].euro_total = this.newData[i].euro_other_2015;
+                this.newData[i].other_total = this.newData[i].other_2015;
             }
             this.totalcal[0].fam_total = this.totalcal[0].fam_local_2015;
-            this.totalcal[0].euro_total = this.totalcal[0].euro_other_2015;
+            this.totalcal[0].other_total = this.totalcal[0].other_2015;
         } else if (deviceValue === '2016') {
             this.arrdd.splice(0, 2);
             for (let i = 0; i < this.newData.length; i++) {
                 this.newData[i].fam_total = this.newData[i].fam_local_2016;
-                this.newData[i].euro_total = this.newData[i].euro_other_2016;
+                this.newData[i].other_total = this.newData[i].other_2016;
             }
             this.totalcal[0].fam_total = this.totalcal[0].fam_local_2016;
-            this.totalcal[0].euro_total = this.totalcal[0].euro_other_2016;
+            this.totalcal[0].other_total = this.totalcal[0].other_2016;
         } else {
             this.arrdd = this.scrollableCols.slice();
             for (let i = 0; i < this.newData.length; i++) {
                 this.newData[i].fam_total = (this.newData[i].fam_local_2015 + this.newData[i].fam_local_2016);
-                this.newData[i].euro_total = (this.newData[i].euro_other_2015 + this.newData[i].euro_other_2016);
+                this.newData[i].other_total = (this.newData[i].other_2015 + this.newData[i].other_2016);
             }
             this.totalcal[0].fam_total = (this.totalcal[0].fam_local_2015 + this.totalcal[0].fam_local_2016);
-            this.totalcal[0].euro_total = (this.totalcal[0].fam_local_2016 + this.totalcal[0].euro_other_2016);
+            this.totalcal[0].other_total = (this.totalcal[0].fam_local_2016 + this.totalcal[0].other_2016);
         }
-        console.log(this.arrdd);
     }
 
 }

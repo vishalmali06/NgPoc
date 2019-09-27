@@ -1,4 +1,4 @@
-<h3>Frozen Columns</h3>
+<h3>REVENUE MASTER</h3>
 <select (change)="onChange($event.target.value)">
     <option value="">select</option>
     <option *ngFor="let i of yearsdd">{{i}}</option>
@@ -27,7 +27,7 @@
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
             <td *ngFor="let col of columns; let i = index"
-                [ngClass]="col.field=='fam_total' ? 'lastrow' : col.field=='euro_total' ? 'lastrow' : null">
+                [ngClass]="col.field=='fam_total' ? 'lastrow' : col.field=='other_total' ? 'lastrow' : null">
                 {{rowData[col.field]}}
             </td>
         </tr>
@@ -37,11 +37,11 @@
             <td *ngFor="let col of columns; let i = index" style="background-color:rgba(211, 211, 211, 0.247)">
                 <div *ngIf="col.field == 'company_name'">Total</div>
                 <div *ngIf="col.field == 'fam_local_2015'">{{totalcal[0].fam_local_2015}}</div>
-                <div *ngIf="col.field == 'euro_other_2015'">{{totalcal[0].euro_other_2015}}</div>
+                <div *ngIf="col.field == 'other_2015'">{{totalcal[0].other_2015}}</div>
                 <div *ngIf="col.field == 'fam_local_2016'">{{totalcal[0].fam_local_2016}}</div>
-                <div *ngIf="col.field == 'euro_other_2016'">{{totalcal[0].euro_other_2016}}</div>
+                <div *ngIf="col.field == 'other_2016'">{{totalcal[0].other_2016}}</div>
                 <div *ngIf="col.field == 'fam_total'">{{totalcal[0].fam_total}}</div>
-                <div *ngIf="col.field == 'euro_total'">{{totalcal[0].euro_total}}</div>
+                <div *ngIf="col.field == 'other_total'">{{totalcal[0].other_total}}</div>
             </td>
         </tr>
     </ng-template>
