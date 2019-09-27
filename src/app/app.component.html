@@ -35,7 +35,7 @@
     <ng-template pTemplate="footer" let-columns>
         <tr>
             <td *ngFor="let col of columns; let i = index" style="background-color:rgba(211, 211, 211, 0.247)">
-                <div *ngIf="col.field == 'company_name'">Total</div>
+                <div *ngIf="col.field == 'company_name'">TOTAL</div>
                 <div *ngIf="col.field == 'fam_local_2015'">{{totalcal[0].fam_local_2015}}</div>
                 <div *ngIf="col.field == 'other_2015'">{{totalcal[0].other_2015}}</div>
                 <div *ngIf="col.field == 'fam_local_2016'">{{totalcal[0].fam_local_2016}}</div>

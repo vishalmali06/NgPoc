@@ -84,8 +84,12 @@ export class AppComponent implements OnInit {
             if (i === 0) {
                 for (let j = 0; j < Object.keys(this.newData[i]).length; j++) {
                     if (j < 4) {
+                        let header =humanize(Object.keys(this.newData[i])[j]);
+                        header = header.replace("Ac No", "A/c. No");
+                        header = header.replace("B A", "BA");
+                        header = header.replace("F A M", "FAM");
                         this.frozenCols.push(
-                            { field: Object.keys(this.newData[i])[j], header: humanize(Object.keys(this.newData[i])[j]) }
+                            { field: Object.keys(this.newData[i])[j], header: header }
                         );
                     } else {
                         let header = humanize(Object.keys(this.newData[i])[j]).replace("Fam", "FAM");
