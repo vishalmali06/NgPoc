@@ -88,8 +88,10 @@ export class AppComponent implements OnInit {
                             { field: Object.keys(this.newData[i])[j], header: humanize(Object.keys(this.newData[i])[j]) }
                         );
                     } else {
+                        let header = humanize(Object.keys(this.newData[i])[j]).replace("Fam", "FAM");
+                        header = header.replace("Other", "Euro/Other");
                         this.scrollableCols.push(
-                            { field: Object.keys(this.newData[i])[j], header: humanize(Object.keys(this.newData[i])[j]) }
+                            { field: Object.keys(this.newData[i])[j], header: header }
                         );
                     }
                 }
