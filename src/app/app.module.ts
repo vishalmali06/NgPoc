@@ -9,10 +9,12 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
+import { GraphsComponent } from './graphs/graphs.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        GraphsComponent
     ],
     imports: [
         BrowserModule,
@@ -24,7 +26,7 @@ import { AppComponent } from './app.component';
         DialogModule,
         ButtonModule
     ],
-    providers: [],
+    providers: [GraphsComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

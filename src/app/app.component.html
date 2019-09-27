@@ -1,5 +1,10 @@
 <h3>Frozen Columns</h3>
-<p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="newData" [scrollable]="true"
+<select (change)="onChange($event.target.value)">
+    <option value="">select</option>
+    <option *ngFor="let i of yearsdd">{{i}}</option>
+</select>
+<h3></h3>
+<p-table [columns]="arrdd" [frozenColumns]="frozenCols" [value]="newData" [scrollable]="true"
     scrollHeight="200px" [frozenWidth]="frozenWidth">
     <ng-template pTemplate="colgroup" let-columns>
         <colgroup>
@@ -7,8 +12,13 @@
         </colgroup>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
+        <!-- <tr>
+            <th *ngFor="let col of columns; let i = index" [class]="i">
+                {{i}}
+            </th>
+        </tr> -->
         <tr>
-            <th *ngFor="let col of columns" [ngClass]="'headerstyle'" [pSortableColumn]="col.field">
+            <th *ngFor="let col of columns; let i = index" [ngClass]="'headerstyle'" [pSortableColumn]="col.field">
                 {{col.header}}<p-sortIcon *ngIf="col.field == 'company_name' || col.field == 'distributor_ac_no'"
                     [field]="col.field"></p-sortIcon>
             </th>
@@ -36,3 +46,4 @@
         </tr>
     </ng-template>
 </p-table>
+<app-graphs></app-graphs>

@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
     totalcal: any[];
     totarr: any[];
 
+    yearsdd = ["2015", "2016"];
+    arrdd: any[];
+
     ngOnInit() {
         this.frozenCols = [];
         this.scrollableCols = [];
@@ -22,6 +25,7 @@ export class AppComponent implements OnInit {
         this.newData = [];
         this.totalcal = [];
         this.totarr = [];
+        this.arrdd = [];
         this.data = [
             { company_name: 'AIR', distributor_ac_no: 12345, b_a: 'CT', f_a_m: 'INK', year: 2015, fam_local: 10, euro_other: 20 },
             { company_name: 'Optimize', distributor_ac_no: 12345677, b_a: 'PT', f_a_m: 'INO', year: 2015, fam_local: 30, euro_other: 40 },
@@ -76,7 +80,7 @@ export class AppComponent implements OnInit {
             );
         }
 
-        console.log(this.newData);
+        //console.log(this.newData);
 
         for (let i = 0; i < this.newData.length; i++) {
             if (i === 0) {
@@ -107,6 +111,23 @@ export class AppComponent implements OnInit {
             return acc;
         }, {})];
 
+        // this.totalcal.forEach((obj, i) => {
+        //     const key = Object.keys(obj)[ i];
+        //     obj[key] = i;
+        // });
+
+        // for (let i = 0; i < this.totalcal.length; i++) {
+        //     for (let j = 0; j < Object.keys(this.totalcal[i]).length; j++) {
+        //         if (j > 3) {
+        //             this.newData[i] = 'here';     
+        //         } else {
+
+        //         }
+        //     }
+        // }
+
+        //console.log(this.totalcal);
+
         function humanize(str) {
             const frags = str.split('_');
             for (let i = 0; i < frags.length; i++) {
@@ -114,6 +135,21 @@ export class AppComponent implements OnInit {
             }
             return frags.join(' ');
         }
-        console.log(this.totalcal);
+        //console.log(this.scrollableCols);
+        this.arrdd = this.scrollableCols.slice();
     }
+
+    onChange(deviceValue) {
+        this.arrdd = this.scrollableCols.slice();
+        console.log(this.arrdd);
+        if (deviceValue === '2015') {
+            this.arrdd.splice(2, 2);
+        } else if (deviceValue === '2016') {
+            this.arrdd.splice(0, 2);
+        } else {
+            this.arrdd = this.scrollableCols.slice();
+        }
+        console.log(this.arrdd);
+    }
+
 }
