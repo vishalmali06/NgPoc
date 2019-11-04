@@ -1,0 +1,20 @@
+{
+	"Status": "Success",
+	"Response": [{
+		"CompanyId": 777,
+		"CompanyName": "風泰*",
+		"AccountNumber": "2454",
+		"FAM": "TWN",
+		"BA": "CT",
+		"Brand": "Atlas Copco",
+		"Segment": "",
+		"LocalRevenueSymbol": "₽",
+		"OtherRevenueSymbol": "p.",
+		"YearRevenueList": [{
+			"Year": 2018,
+			"LocalRevenue": null,
+			"OtherRevenue": null
+		}]
+	}],
+	"Errors": []
+}
